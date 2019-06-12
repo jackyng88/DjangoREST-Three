@@ -37,11 +37,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'rest_framework',
     'rest_framework.authtoken',
 
     'rest_auth',
+    'rest_auth.registration',
+
+    # We need to register these three django-allauth packages because it is
+    # very powerful for registration purposes. Social also allows for social
+    # network (Facebook/Twitter for authentication for example). allauth is 
+    # also a dependency of the rest_auth registration.
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
     'profiles'
 ]
@@ -135,3 +145,10 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication'
     )
 }
+
+
+# The following lines are for rest_auth/allauth.
+SITE_ID = 1
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_REQUIRED = (True)

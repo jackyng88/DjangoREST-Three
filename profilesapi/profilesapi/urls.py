@@ -25,7 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('profiles.api.urls')),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/rest-auth/', include('rest_auth.urls'))
+    path('api/rest-auth/', include('rest_auth.urls')),
+    path('api/rest-auth/registration/', include('rest_auth.registration.urls'))
 ]
 
 # if settings.DEBUG is true append urlpatterns with media_url and media_root
