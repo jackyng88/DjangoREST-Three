@@ -26,6 +26,6 @@ def create_profile(sender, instance, created, **kwargs):
     default_app_config parameter. Also requires goign to apps.py and adding
     a ready function that imports this signals.py file in its entirety.
     """
-    print ('Created: ', created)
+    # print ('Created: ', created)
     if created:
         Profile.objects.create(user=instance)
